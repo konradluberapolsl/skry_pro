@@ -1,1 +1,13 @@
 \.idea
+\.vs
+Zadania201
+*.ilk
+*.pdb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.tlog
+*.obj
+*.log
+*.idb
