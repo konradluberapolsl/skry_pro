@@ -15,8 +15,10 @@ set /p op=">>"
 if %op%==1 goto start 
 if %op%==2 goto info
 if %op%==3 goto backup
+if %op%==4 goto koniec
 
 :start
+start .\Debug\projekt.exe
 goto koniec
 
 :info
@@ -38,4 +40,3 @@ goto main
 :koniec
 pause
 echo on
-

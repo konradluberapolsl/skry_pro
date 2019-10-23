@@ -5,18 +5,19 @@
 using namespace std;
 
 void files(string);
+string encrypt(string);
 
 
 int main()
 {
-	files("chuj");
+	files();
 	system("pause");
 }
 
-void files(string name)
+void files()
 {
 	fstream plik;
-	plik.open("slowa.txt", ios::in);
+	plik.open("input/slowa.txt", ios::in);
 	if (plik.good())
 	{
 		string napis;
@@ -29,5 +30,10 @@ void files(string name)
 		plik.close();
 	}
 	else cout << "Error! Nie udalo otworzyc sie pliku!" << endl;
+
+}
+
+string encrypt(string word)
+{
 
 }
