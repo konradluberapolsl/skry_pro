@@ -18,7 +18,7 @@ if %op%==3 goto backup
 if %op%==4 goto koniec
 
 :start
-start .\Debug\projekt.exe
+start server.py
 goto koniec
 
 :info
