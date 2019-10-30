@@ -1,4 +1,6 @@
 html = open("strona.html", 'w')
+words = open("input\\tekst.txt",'r')
+encrypted = open("input\\szyfr.txt", 'r')
 html.write('<!DOCTYPE HTML>\n'
            '<html lang="pl">\n<head>'
            '    <meta charset="utf-8" />\n'
@@ -13,14 +15,24 @@ html.write('<!DOCTYPE HTML>\n'
            '        <div id="header"> \n'
            '         "Szyfrowanie wiadomosci" - Algorytmion 2015 \n         </div> \n'
            '        <div id="content"> \n'
-           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et '
-           'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip '
-           'ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu '
-           'fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt '
-           'mollit anim id est laborum. \n'
+           '            <div id="tab">\n'
+           '            <table>\n'
+           '                 <tr>\n'
+           '                     <th>tekst.txt</th>\n'
+           '                     <th>szyfr.txt</th>\n'
+           '                     <th>odszyfrowane.txt</th>\n'
+           '                 </tr>\n')
+while (line_1 := words.readline()) and (line_2 := encrypted.readline()) :
+            html.write('                 <tr>\n                     <td>')
+            html.write(line_1.replace('\n',''))
+            html.write('</td>\n                     <td>')
+            html.write(line_2.replace('\n',''))
+            html.write('</td> \n                 </tr>\n')
+html.write('             </table>\n'
+           '             </div>\n'
            '        </div> \n'
            '           <div id="footer"> \n'
-           '            &copy Konrad Lubera, RMS POLSL \n '
+           '            &copy Konrad Lubera, RMS POLSL \n'
            '           </div> \n'
            '    </div> \n'
            '</body> \n'

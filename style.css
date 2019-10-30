@@ -5,6 +5,38 @@ body
     font-family: 'Lato', sans-serif;
     
 }
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid rgb(218, 217, 217);
+}
+td, th
+{
+    padding: 8px;
+    border: 1px solid rgb(218, 217, 217);
+    
+}
+th
+{
+    text-align: center;
+    border-bottom: 3px solid rgb(218, 217, 217);
+    background-color:  rgb(31, 102, 22);
+}
+td
+{
+    text-align: left;
+}
+td:hover {background-color: #636363;} 
+#tab
+{
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+}
 #container
 {
     width: 100%;
@@ -25,7 +57,7 @@ body
 }
 #content
 {
-    min-height: 700px;
+    min-height: 905px;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
