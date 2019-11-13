@@ -29,7 +29,7 @@ td
 {
     text-align: left;
 }
-td:hover {background-color: #636363;} 
+tr:hover {background-color: #636363;} 
 #tab
 {
     padding: 15px;

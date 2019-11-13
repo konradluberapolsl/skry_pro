@@ -38,3 +38,5 @@ html.write('             </table>\n'
            '</body> \n'
            )
 html.close()
+words.close()
+encrypted.close()

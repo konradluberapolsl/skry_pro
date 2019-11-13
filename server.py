@@ -1,9 +1,8 @@
 def fread(nazwa):
     file = open(nazwa, 'r')
     list = file.readlines()
-    # print(ListEncrypt[1])
-    encrypt(list)
     file.close()
+    return list
 
 
 def fwrite(name, list):
@@ -46,5 +45,11 @@ def conversion(number, system):
     return converted
 
 
+def decrypt(list):
+    decrypted = []
 
-fread("input\\tekst.txt")
+
+
+encrypt(fread("input\\tekst.txt"))
+decrypt(fread("input\\szyfr.txt"))
+

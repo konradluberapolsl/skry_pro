@@ -19,6 +19,7 @@ if %op%==4 goto koniec
 
 :start
 start server.py
+start strona.html
 goto koniec
 
 :info
