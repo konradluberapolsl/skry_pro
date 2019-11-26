@@ -12,10 +12,8 @@ def read(name):
     for line in file:
         list.append([])
         for letter in line:
-            list[i].append([])
             if letter == ' ': pass
             else:
-                list[i][j].append(letter)
             j+=1
         i+=1
     print(list)

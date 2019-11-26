@@ -5,7 +5,6 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
-
 \addtolength{\hoffset}{-1.5cm}
 \addtolength{\marginparwidth}{-1.5cm}
 \addtolength{\textwidth}{3cm}
@@ -24,9 +23,23 @@
 	\newpage
 	\section*{Część I}
 	\subsection*{Opis programu}
-	Ogólne informacje o przydatności programu i cel (np.: polecenie). 
+	 Projekt spełnia warunki zadania "Szyfrowanie Wiadomości" z konkursu Algorytmion2015, dodatkowo obsługiwany jest z poziomu powłoki systemu Windows(skrypt batchowski) oraz wyświetla wyniki wykonanych operacji na stronie internetowej. 
+	 \newline
+	\newline Poniżej polecenie z konkursu Algorytmion:
+	
+	Adam i Janek ustalili między sobą, że każdą wiadomość tekstową, będą szyfrować przy pomocy następującego sposobu:
+	\begin{itemize}
+	\item   Każdą literę i znak interpunkcyjny należy zamienić na odpowiadającą liczbę kodu ASCII (liczba naturalna od 0 do 127).
+	\item Pierwsza, tak powstała liczba, jest zamieniana na system dwójkowy.
+	\item Kolejne liczby, wynikające z kodu ASCII, są zamieniane na system liczbowy, który jest równy powiększonej o dwa reszcie z dzielenia przez osiem poprzedniej liczby.
+	\item  Ilość cyfr zamienionej liczby, dla każdego systemu liczbowego, wynika z ilości cyfr zamiany liczby maksymalnej, czyli liczby 127 (dla systemu binarnego jest to siedem cyfr). 
+	\end{itemize}
+	Twoim zadaniem jest napisanie programu, który szyfruje i deszyfruje wiadomości. \newline
+Szyfrowanie tekstu z pliku tekst.txt do pliku szyfr.txt \newline Deszyfrowanie tekstu z pliku szyfr.txt do pliku odszyfrowane.txt 
+
 	\subsection*{Instrukcja obsługi}
-	Opis jak właczyć i obsługiwać program. Można dodać zrzuty ekranu (dokładniej, wycinki).
+	Aby uruchomić program należy otworzyć plik "server.bat" znajdujący się w głównym folderze projektu.
+	
 \newpage
 	\section*{Część II}
 	\subsection*{Część techniczna}

@@ -10,3 +10,7 @@
 *.obj
 *.log
 *.idb
+*.aux
+*.out
+*.pdf
+*.*.gz
