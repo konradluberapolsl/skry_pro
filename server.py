@@ -20,7 +20,6 @@ def read(name):
             else:
                 word+=letter
         i += 1
-    #print(list)
     file.close()
     return list
 
@@ -37,6 +36,11 @@ def fwrite(name, list):
                 file.write('\n')
     file.close()
 
+def write(name, list):
+    file = open(name, 'w')
+    for item in list:
+        file.write(item +'\n')
+    file.close()
 
 def encrypt(list_encrypt):
     encrypted = []
@@ -50,8 +54,7 @@ def encrypt(list_encrypt):
 
                 else:
                     encrypted[i].append(conv_to_sys(ord(list_encrypt[i][j]), 2))
-    # print(encrypted)
-    fwrite("output\\szyfr.txt", encrypted)
+    fwrite("output/szyfr.txt", encrypted)
 
 
 def conv_to_sys(number, system):
@@ -67,23 +70,32 @@ def conv_to_sys(number, system):
 
 def conv_from_sys(number, sys):
     sum = 0
-    print(number)
     num = ''.join(reversed(number))
-    print(num)
-    if sys == 2:
-        for i in range(len(num)):
-            print(num[i])
-            if num[i] == '1': sum += pow(2,i)
+    for i in range(len(num)):
+        sum+=int(num[i]) * pow(sys,i)
+    if sum>127: sum-=127
     return sum
 
 
 def decrypt(list):
     decrypted = []
-    print(list)
-    decrypted.append(chr(conv_from_sys(list[0][0],2)))
-    print(decrypted)
+    sys = 0
+    word=''
+    letter=0
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            if j==0: sys=2
+            letter = conv_from_sys(list[i][j], sys)
+            word+=chr(letter)
+            sys = (letter%8)+2
+        decrypted.append(word)
+        word =''
+    write("output/odszyfrowane.txt",decrypted)
 
 
 
-encrypt(fread("input\\tekst.txt"))
-decrypt(read("output\\szyfr.txt"))
+encrypt(fread("input/tekst.txt"))
+decrypt(read("output/szyfr.txt"))
+
+
+#TODO: Charts

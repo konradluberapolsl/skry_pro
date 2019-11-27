@@ -1,6 +1,7 @@
 html = open("strona.html", 'w')
-words = open("input\\tekst.txt",'r')
-encrypted = open("input\\szyfr.txt", 'r')
+words = open("input/tekst.txt",'r')
+encrypted = open("output/szyfr.txt", 'r')
+decypted = open("output/odszyfrowane.txt", 'r')
 html.write('<!DOCTYPE HTML>\n'
            '<html lang="pl">\n<head>'
            '    <meta charset="utf-8" />\n'
@@ -22,11 +23,13 @@ html.write('<!DOCTYPE HTML>\n'
            '                     <th>szyfr.txt</th>\n'
            '                     <th>odszyfrowane.txt</th>\n'
            '                 </tr>\n')
-while (line_1 := words.readline()) and (line_2 := encrypted.readline()) :
+while (line_1 := words.readline()) and (line_2 := encrypted.readline()) and (line_3 := decypted.readline()):
             html.write('                 <tr>\n                     <td>')
             html.write(line_1.replace('\n',''))
             html.write('</td>\n                     <td>')
             html.write(line_2.replace('\n',''))
+            html.write('</td>\n                     <td>')
+            html.write(line_3.replace('\n', ''))
             html.write('</td> \n                 </tr>\n')
 html.write('             </table>\n'
            '             </div>\n'
@@ -40,3 +43,4 @@ html.write('             </table>\n'
 html.close()
 words.close()
 encrypted.close()
+decypted.close()
