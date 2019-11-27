@@ -51,7 +51,7 @@ def encrypt(list_encrypt):
                 else:
                     encrypted[i].append(conv_to_sys(ord(list_encrypt[i][j]), 2))
     # print(encrypted)
-    fwrite("input\\szyfr.txt", encrypted)
+    fwrite("output\\szyfr.txt", encrypted)
 
 
 def conv_to_sys(number, system):
@@ -86,4 +86,4 @@ def decrypt(list):
 
 
 encrypt(fread("input\\tekst.txt"))
-decrypt(read("input\\szyfr.txt"))
+decrypt(read("output\\szyfr.txt"))
