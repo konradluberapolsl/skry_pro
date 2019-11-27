@@ -4,20 +4,25 @@ def fread(nazwa):
     file.close()
     return list
 
+
 def read(name):
     list = []
+    word = ''
     i = 0
-    j = 0
-    file = open(name,'r')
+    file = open(name, 'r')
     for line in file:
         list.append([])
         for letter in line:
-            if letter == ' ': pass
+            if letter == ' ':
+                list[i].append(word)
+                word = ''
+            elif letter=="\n": pass
             else:
-            j+=1
-        i+=1
-    print(list)
+                word+=letter
+        i += 1
+    #print(list)
     file.close()
+    return list
 
 
 def fwrite(name, list):
@@ -45,7 +50,7 @@ def encrypt(list_encrypt):
 
                 else:
                     encrypted[i].append(conv_to_sys(ord(list_encrypt[i][j]), 2))
-    #print(encrypted)
+    # print(encrypted)
     fwrite("input\\szyfr.txt", encrypted)
 
 
@@ -63,20 +68,22 @@ def conv_to_sys(number, system):
 def conv_from_sys(number, sys):
     sum = 0
     print(number)
-    number.reverse()
+    num = ''.join(reversed(number))
+    print(num)
     if sys == 2:
-        for i in number:
-            if i == '1': sum += 2 ^ i
+        for i in range(len(num)):
+            print(num[i])
+            if num[i] == '1': sum += pow(2,i)
     return sum
 
 
 def decrypt(list):
     decrypted = []
     print(list)
+    decrypted.append(chr(conv_from_sys(list[0][0],2)))
     print(decrypted)
-    # print(conv_from_sys(list[0],2))
+
 
 
 encrypt(fread("input\\tekst.txt"))
-#decrypt(fread("input\\szyfr.txt"))
-read("input\\szyfr.txt")
+decrypt(read("input\\szyfr.txt"))
