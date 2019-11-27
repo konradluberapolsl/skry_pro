@@ -1,9 +1,13 @@
+import matplotlib.pyplot as plt
+
+systems ={}
+
+
 def fread(nazwa):
     file = open(nazwa, 'r')
     list = file.readlines()
     file.close()
     return list
-
 
 def read(name):
     list = []
@@ -50,9 +54,13 @@ def encrypt(list_encrypt):
             if list_encrypt[i][j] != '\n':
                 if j != 0:
                     sys = (ord(list_encrypt[i][j - 1]) % 8) + 2
+                    if sys not in systems: systems.update({sys: 1})
+                    else: systems[sys]+=1
                     encrypted[i].append(conv_to_sys(ord(list_encrypt[i][j]), sys))
 
                 else:
+                    if 2 not in systems: systems.update({2: 1})
+                    else: systems[2] += 1
                     encrypted[i].append(conv_to_sys(ord(list_encrypt[i][j]), 2))
     fwrite("output/szyfr.txt", encrypted)
 
@@ -92,10 +100,20 @@ def decrypt(list):
         word =''
     write("output/odszyfrowane.txt",decrypted)
 
+def plot():
+    fig, ax = plt.subplots()
+    plt.bar(systems.keys(),systems.values(),color="forestgreen")
+    plt.title("Ilość wystąpień danego systemu liczbowego" )
+    plt.xlabel("Rodzaj systemu")
+    plt.ylabel("Ilość wystąpień")
+    plt.savefig("images/plot.jpg",dpi=100)
+
 
 
 encrypt(fread("input/tekst.txt"))
 decrypt(read("output/szyfr.txt"))
+plot()
 
 
-#TODO: Charts
+
+

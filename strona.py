@@ -1,7 +1,8 @@
 html = open("strona.html", 'w')
 words = open("input/tekst.txt",'r')
 encrypted = open("output/szyfr.txt", 'r')
-decypted = open("output/odszyfrowane.txt", 'r')
+decrypted = open("output/odszyfrowane.txt", 'r')
+
 html.write('<!DOCTYPE HTML>\n'
            '<html lang="pl">\n<head>'
            '    <meta charset="utf-8" />\n'
@@ -23,7 +24,7 @@ html.write('<!DOCTYPE HTML>\n'
            '                     <th>szyfr.txt</th>\n'
            '                     <th>odszyfrowane.txt</th>\n'
            '                 </tr>\n')
-while (line_1 := words.readline()) and (line_2 := encrypted.readline()) and (line_3 := decypted.readline()):
+while (line_1 := words.readline()) and (line_2 := encrypted.readline()) and (line_3 := decrypted.readline()):
             html.write('                 <tr>\n                     <td>')
             html.write(line_1.replace('\n',''))
             html.write('</td>\n                     <td>')
@@ -33,6 +34,8 @@ while (line_1 := words.readline()) and (line_2 := encrypted.readline()) and (lin
             html.write('</td> \n                 </tr>\n')
 html.write('             </table>\n'
            '             </div>\n'
+           '            <div id="txt">Poniżej zestwaienie częstowliwości występowania danych systemów liczbowych </div> \n'
+           '            <img src="images\plot.jpg"/>\n'           
            '        </div> \n'
            '           <div id="footer"> \n'
            '            &copy Konrad Lubera, RMS POLSL \n'
@@ -43,4 +46,4 @@ html.write('             </table>\n'
 html.close()
 words.close()
 encrypted.close()
-decypted.close()
+decrypted.close()
