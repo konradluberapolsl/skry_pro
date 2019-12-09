@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{graphicx}
+\usepackage{listings}
 \usepackage[]{algorithm2e}
 \addtolength{\hoffset}{-1.5cm}
 \addtolength{\marginparwidth}{-1.5cm}
@@ -24,7 +25,7 @@
 	\newpage
 	\section*{Część I}
 	\subsection*{Opis programu}
-	 Projekt spełnia warunki zadania "Szyfrowanie Wiadomości" z konkursu Algorytmion2015, dodatkowo obsługiwany jest z poziomu powłoki systemu Windows(skrypt batchowski) oraz wyświetla wyniki wykonanych operacji na stronie internetowej. 
+	 Projekt spełnia warunki zadania Szyfrowanie Wiadomości z konkursu Algorytmion2015, dodatkowo obsługiwany jest z poziomu powłoki systemu Windows(skrypt batchowski) oraz wyświetla wyniki wykonanych operacji na stronie internetowej. 
 	 \newline
 	\newline Poniżej polecenie z konkursu Algorytmion:
 	
@@ -46,7 +47,7 @@ Szyfrowanie tekstu z pliku tekst.txt do pliku szyfr.txt \newline Deszyfrowanie t
 	\subsection*{Część techniczna}
 	Schemat działania i szczegółowy opis komponentów, mechanizmów (bez kodu).
 	\subsection*{Opis działania} 
-	Tutaj uwzględniamy część matematyczną. Wszelki opis działania programu, komponentów (bez kodu)
+	Główny algorytm programy szyfruje podane słowa za pomocą zamiany kodu ASCI liter tego słowa z systemu dziesiętnego na odpowiednio wyliczony system liczbowy. Pierwsza litera danego słowa jest zamieniana 
 	\subsection*{Implementacja}
 	Tutaj opisujemy wybrane działanie KODU programu -- z uwzględnieniem PSEUDOKODU (utworzonego przy użyciu \LaTeX, a nie obrazka).
 	\begin{verbatim}
@@ -54,17 +55,28 @@ Szyfrowanie tekstu z pliku tekst.txt do pliku szyfr.txt \newline Deszyfrowanie t
 	\end{verbatim}
 	\newpage
 	\section*{Pełen kod programu}
-dsa
-	Wklejamy pełen kod z podziałem na pliki, np.:
-	
+
 	\begin{itemize}
-	\item PLIK I
-	\begin{verbatim}
-	kod pliku I
-	\end{verbatim}
-	\item PLIK II
-	\begin{verbatim}
-	kod pliku II
-	\end{verbatim}
+	\item SERVER.PY
+	\begin{lstlisting}[language=Python]
+
+
+	\end{lstlisting}
+
+	\item STRONA.PY
+	\begin{lstlisting}[language=Python]
+
+	\end{lstlisting}
+	
+	\item STRONA.HTML
+	\begin{lstlisting}[language=Html]
+
+	\end{lstlisting}
+	
+	\item STYLE.CSS
+	\begin{lstlisting}
+
+	\end{lstlisting}
 	\end{itemize}
+
 \end{document}

@@ -18,7 +18,13 @@ if %op%==3 goto backup
 if %op%==4 goto koniec
 
 :start
+mkdir .\backup\backup_%date%
+xcopy /Q /Y strona.html .\backup\backup_%date%
+xcopy /Q /Y style.css .\backup\backup_%date%
+xcopy /Q /Y strona.py .\backup\backup_%date%
+xcopy /Q /Y server.py .\backup\backup_%date%
 start server.py
+start strona.py
 start strona.html
 goto koniec
 
