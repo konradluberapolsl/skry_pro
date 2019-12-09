@@ -1,5 +1,5 @@
 @echo off
-title %Projekt Semestralny Języki Skryptowe%
+title Projekt Semestralny Jezyki Skryptowe
 
 :main
 cls
