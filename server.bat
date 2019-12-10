@@ -23,7 +23,9 @@ xcopy /Q /Y strona.html .\backup\backup_%date%
 xcopy /Q /Y style.css .\backup\backup_%date%
 xcopy /Q /Y strona.py .\backup\backup_%date%
 xcopy /Q /Y server.py .\backup\backup_%date%
-start server.py
+xcopy /Q /Y .\input .\backup\backup_%date%
+xcopy /Q /Y .\output .\backup\backup_%date%
+start server.exe
 start strona.py
 start strona.html
 goto koniec

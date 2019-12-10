@@ -15,20 +15,18 @@ def fread(nazwa):
             list[i] = f.readlines()
             f.close()
         i+=1
-    print(list)
     return list
 
-def read(name):
+def read(n):
     list = []
-    path = name
+    path = n
     files = glob.glob(path)
     word = ''
     i = 0
     j = 0
-    # file = open(name, 'r')
-    for n in files:
+    for name in files:
         list.append([])
-        with open(n, 'r') as f:
+        with open(name, 'r') as f:
             for line in f:
                 list[j].append([])
                 for letter in line:
@@ -42,7 +40,6 @@ def read(name):
             f.close()
         i = 0
         j += 1
-    # file.close()
     return list
 
 
@@ -64,7 +61,6 @@ def fwrite(name, list):
 
 
 def write(name, list):
-    # file = open(name, 'w')
     for i in range(len(list)):
         path = name
         path = path + str(i) + '.txt'
@@ -142,7 +138,7 @@ def plot():
 
 
 encrypt(fread("input/*.txt"))
-decrypt(read("output/*.txt"))
+decrypt(read("output/szyfr*.txt"))
 plot()
 
 
